@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  ul li{
+    list-style: none;
+  }
+  a{
+    color: #333;
+    text-decoration: none;
+  }
+  a:link{
+    text-decoration: none;
+  }
+  a:active{
+    text-decoration: none;
+  }
+  a:visited{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  .nav{
+    background: #c7171e;
+    width: 200px;
+    margin: 10px;
+  }
+
+  .nav-title{
+    color: #FFF;
+    display: block;
+    width: 160px;
+    border-bottom: 1px dotted #de272e;
+    margin: 20px;
+    padding-bottom: 10px;
+  }
+  .nav-title:visited{
+    color: #FFF;
+  }
+  .nav-title:hover{
+    color: #FFF;
+  }
+  span{
+    float: right;
+    color: #FFF;
+  }
+  .nav-ul{
+    position: relative;
+  }
+  .child-ul{
+    width: 210px;
+    position: absolute;
+    top:0;
+    left: 200px;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 12px;
+  }
+  .hide{
+    display: none;
+  }
+  .child-li{
+    float: right;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+  }
+  </style>
+  <body>
+    <div class="nav">
+      <ul class="nav-ul">
+        <li class="nav-li">
+          <a href="#" class="nav-title">珠宝玉器<span class="glyphicon glyphicon-menu-right"></span></a>
+
+          <ul class="child-ul hide">
+            <li class="child-li"><a href="#">翡翠</a></li>
+            <li class="child-li"><a href="#">玉石</a></li>
+            <li class="child-li"><a href="#">宝石</a></li>
+            <li class="child-li"><a href="#">水晶</a></li>
+            <li class="child-li"><a href="#">玛瑙</a></li>
+            <li class="child-li"><a href="#">珍珠</a></li>
+            <li class="child-li"><a href="#">钻石</a></li>
+            <li class="child-li"><a href="#">琥珀</a></li>
+            <li class="child-li"><a href="#">和田</a></li>
+            <li class="child-li"><a href="#">琥珀</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav-ul">
+        <li class="nav-li">
+          <a href="#" class="nav-title">珠宝玉器 <span class="glyphicon glyphicon-menu-right"></span></a>
+
+          <ul class="child-ul hide">
+            <li class="child-li"><a href="#">翡翠</a></li>
+            <li class="child-li"><a href="#">玉石</a></li>
+            <li class="child-li"><a href="#">宝石</a></li>
+            <li class="child-li"><a href="#">水晶</a></li>
+            <li class="child-li"><a href="#">玛瑙</a></li>
+            <li class="child-li"><a href="#">珍珠</a></li>
+            <li class="child-li"><a href="#">钻石</a></li>
+            <li class="child-li"><a href="#">琥珀</a></li>
+            <li class="child-li"><a href="#">和田</a></li>
+            <li class="child-li"><a href="#">琥珀</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav-ul">
+        <li class="nav-li">
+          <a href="#" class="nav-title">珠宝玉器 <span class="glyphicon glyphicon-menu-right"></span></a>
+
+          <ul class="child-ul hide">
+            <li class="child-li"><a href="#">翡翠</a></li>
+            <li class="child-li"><a href="#">玉石</a></li>
+            <li class="child-li"><a href="#">宝石</a></li>
+            <li class="child-li"><a href="#">水晶</a></li>
+            <li class="child-li"><a href="#">玛瑙</a></li>
+            <li class="child-li"><a href="#">珍珠</a></li>
+            <li class="child-li"><a href="#">钻石</a></li>
+            <li class="child-li"><a href="#">琥珀</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav-ul">
+        <li class="nav-li">
+          <a href="#" class="nav-title">珠宝玉器 <span class="glyphicon glyphicon-menu-right"></span></a>
+
+          <ul class="child-ul hide">
+            <li class="child-li"><a href="#">翡翠</a></li>
+            <li class="child-li"><a href="#">玉石</a></li>
+            <li class="child-li"><a href="#">宝石</a></li>
+            <li class="child-li"><a href="#">水晶</a></li>
+            <li class="child-li"><a href="#">玛瑙</a></li>
+            <li class="child-li"><a href="#">珍珠</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav-ul">
+        <li class="nav-li">
+          <a href="#" class="nav-title">珠宝玉器 <span class="glyphicon glyphicon-menu-right"></span></a>
+
+          <ul class="child-ul hide">
+            <li class="child-li"><a href="#">翡翠</a></li>
+            <li class="child-li"><a href="#">玉石</a></li>
+            <li class="child-li"><a href="#">宝石</a></li>
+            <li class="child-li"><a href="#">水晶</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    $('ul').mouseleave(function(){
+      $(this).find('ul').addClass('hide');
+    });
+    $('ul').mouseenter(function(){
+      $(this).find('ul').removeClass('hide');
+    });
+  </script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).bind("mobileinit", function(){
+    $.mobile.defaultPageTtransition = 'fade';
+     })
+    </script>
+    <script src="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.js"></script>
+  </head>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    height: 100%;
+  }
+  a{
+    text-decoration: none;
+    color: #333;
+  }
+  a:active{
+    background: pink;
+  }
+  .header-ul{
+    float: right;
+    width: 150px;
+  }
+  .header-li,.header-li2{
+    width: 60px !important;
+  }
+  .header-li2{
+    background-color: green;
+  }
+  .login{
+    background: #000;
+    height: 100%;
+  }
+  .main{
+    height: 100%;
+  }
+  </style>
+  <body>
+    <div data-role='page' id="page1" data-transition="slide">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <div data-role="navbar">
+        <ul class="header-ul">
+          <li class="header-li"><a href="#page2">登录</a></li>
+          <li class="header-li2"><a href="#" >注册</a></li>
+        </ul>
+      </div>
+      </div>
+      <div role="main"class="main" >
+      <div class="login">
+
+      </div>
+      </div>
+      <div data-role="footer" data-position="fixed"><h4>底部</h4></div>
+    </div>
+
+
+    <div data-role='page' id="page2" data-transition="slide">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <div data-role="navbar">
+        <ul class="header-ul">
+          <li class="header-li"><a href="#page2">登录</a></li>
+          <li class="header-li2"><a href="#" >注册</a></li>
+        </ul>
+      </div>
+      </div>
+      <div role="main"class="main" >
+      <div class="login">
+
+      </div>
+      </div>
+      <div data-role="footer" data-position="fixed"><h4>底部</h4></div>
+    </div>
+  </body>
+</html>
