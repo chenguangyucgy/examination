@@ -22,7 +22,7 @@
      width: 100%;
      font-weight: 100 !important;
   }
-  ul li{
+  ul {
     list-style-type: none;
   }
     .header{
@@ -52,31 +52,91 @@
       margin-right: 20px;
       width: 17px;
     }
+    #footer-nav li img{
+      width: 35px;
+    }
+    #footer-nav li{
+      width: 25%;
+      float: left;
+      text-align: center;
+    }
+    #footer-nav li a{
+      color: #7e7e7e !important;
+      font-weight: 800 !important;
+    }
+    #main{
 
+    }
   </style>
   <script type="text/javascript">
-   $(function(){
   //头部点击效果
-     $('.im-title').mousedown(function(){
-     $(this).css('background-color','#000')
-     });
+  $(function(){
+    $('.im-title').mousedown(function(){
+    $(this).css('background-color','#000')
+    });
 
-     $('.im-title').mouseup(function(){
-     $(this).css('background-color','#292421')
-     });
+    $('.im-title').mouseup(function(){
+    $(this).css('background-color','#292421')
+    });
+  //头部列表显隐
+    $('#ulclick').click(function(e){
+      $('#title-ul').show();
+      e.stopPropagation();
+    });
+
+    $('body').click(function(e){
+      $('#title-ul').hide();
+    });
+  });
+
+  //在页面初始化时, 增强完成前弹出信息
+  $(document).on("pagecreate" , function(){
+    //初始化加载聊天列表
+    setChat();
+    //上一个选中的按钮
+    var lastTab = $("#tab_chat")[0];
+
+   $("#footer-nav li").on("tap",function(){
+
+    //回复上一个按钮未选中状态
+    $(lastTab).children("img").attr("src","image/"+lastTab.id+"_normal.png");
+    $(lastTab).children("a").css("color","#7e7e7e");
+    lastTab = this ;
+
+    //改变按钮样式
+    $(this).children("img").attr("src","image/"+this.id+"_checked.png");
+    $(this).children("a").css("color","#2aa515");
 
 
-     $('#ulclick').click(function(){
-       $('#title-ul').show();
-
-     });
-
-     $('body').not('#ulclick').click(function(){
-       $('#title-ul').hide();
-     });
-
+    //切换列表
+     if(this.id == "tab_chat"){
+       setChat();
+     }else if(this.id == "tab_addressbook"){
+       setAddressBook();
+     }else if(this.id == "tab_found"){
+       setFound();
+     }else if(this.id == "tab_me"){
+       setMe();
+     }
    });
+});
 
+ function setChat(){
+
+ 	for(var i = 0; i < 20; i++){
+    $('#main').append('<li style="list-style-type: none;height:80px"><a href="#"><img src="image/head.jpg" style="margin-left:5px;margin-top:5px;width:70px;height:70px;float:left"/><p style="float:right;color:#8a8a8a">17:26</p><h4 style="color:#000;padding:7px;">好友</h4><p style="color:#8a8a8a;font-size:12px;padding:7px">这是聊天消息</p></a></li>');
+ 	}
+
+ };
+ function setAddressBook(){
+  $('#main').html('<h1>333333333<h1>');
+ };
+ function setFound(){
+  $('#main').html('<h1>44444444444<h1>');
+ };
+ function setMe(){
+  $('#main').html('<h1>777777777777<h1>');
+ }
   </script>
   <body>
     <div data-role='page'>
@@ -84,10 +144,8 @@
           <div style="padding: 10px;font-size:20px;float:left">微信</div>
           <div class="im-title" id="ulclick"><img src="./image/ic_more.png" width="25"></div>
           <div class="im-title"><img src="./image/ic_search.png" width="25"></div>
-
       </div>
       <div role="main">
-
        <div id="title-ul">
          <ul>
            <li><a href="#"><img src="./image/ic_groupchat.png" alt="">发起群聊</a></li>
@@ -97,9 +155,28 @@
            <li><a href="#"><img src="./image/ic_feedback.png" alt="">帮助和反馈</a></li>
          </ul>
        </div>
-
+       <div id="main"></div>
       </div>
-      <div data-role="footer" data-position="fixed"><h4>底部</h4></div>
+      <div data-role="footer" data-position="fixed" style="background-color:#fff">
+        <ul id="footer-nav">
+          <li id="tab_chat">
+    				<img src="image/tab_chat_checked.png"/><br/>
+      				<a href="#" style="color:#2aa515 !important">微信</a>
+    			</li>
+    			<li id="tab_addressbook">
+    				<img src="image/tab_addressbook_normal.png"/><br/>
+    				<a href="#">通讯录</a>
+    			</li>
+    			<li id="tab_found">
+    				<img src="image/tab_found_normal.png"/><br/>
+    				<a href="#">发现</a>
+    			</li>
+    			<li id="tab_me">
+    				<img src="image/tab_me_normal.png"/><br/>
+    				<a href="#">我</a>
+    			</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
